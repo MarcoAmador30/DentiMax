@@ -1,0 +1,24 @@
+.menu{
+    background-color: rgb(37, 150, 190);
+    color: white;
+}
+.links{
+    float: right;
+    margin-bottom: 0;
+}
+.elementoMenu{
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.elementoMenu a{
+    text-decoration: none;
+    color: white;
+}
+.cuerpo{
+    background-color: black;
+    color: white;
+}
+#fondoDiente{
+    background-image: url(../img/diente.png);
+}
