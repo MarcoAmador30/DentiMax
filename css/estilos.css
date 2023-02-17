@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Montserrat&display=swap');
+
+*{
+    font-family: 'Didact Gothic', sans-serif;
+}
 .menu{
     background-color: rgb(37, 150, 190);
     color: white;
@@ -21,4 +26,15 @@
 }
 #fondoDiente{
     background-image: url(../img/diente.png);
+}
+.fondo{
+    background-image: url(../img/fondo_login.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.cuadro{
+    background-image: url(../img/textura_cubo.jpg);
+    background-size: cover;
+    border-radius: 20px;
 }
