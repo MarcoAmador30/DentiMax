@@ -4,21 +4,33 @@
     font-family: 'Didact Gothic', sans-serif;
 }
 .menu{
-    background-color: rgb(0, 72, 227);
+    background-color: hsl( 227deg 98% 59% );
     color: white;
 }
 .links{
     float: right;
-    margin-bottom: 0;
 }
 .elementoMenu{
     display: inline-block;
     padding-left: 15px;
     padding-right: 15px;
 }
+.elementoSubMenu{
+    display: inline-block;
+    padding-right: 30px;
+}
 .elementoMenu a{
     text-decoration: none;
     color: white;
+}
+.elementoSubMenu a{
+    text-decoration: none;
+}
+.elementoSubMenu a:hover{
+    color: rgb(52, 52, 52);
+}
+.pantallas{
+    margin: 0;
 }
 #fondoDiente{
     background-image: url(../img/diente.png);
@@ -27,10 +39,32 @@
     background-image: url(../img/fondo_login.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
 }
 .cuadro{
     background-image: url(../img/textura_cubo.jpg);
     background-size: cover;
     border-radius: 20px;
+}
+.servicio{
+    box-shadow: 0px 0.3px rgb(41, 41, 41);
+}
+.precio{
+    font-size: 25px;
+    text-decoration: underline;
+}
+.sombra{
+    box-shadow: 0px 0.3px rgb(88, 88, 88);
+}
+.textoNegro{
+    color: black;
+}
+.textoBlanco{
+    color: white;
+}
+.enlaces{
+    text-decoration: none;
+}
+.error{
+    color: red;
 }

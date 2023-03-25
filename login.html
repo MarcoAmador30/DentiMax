@@ -15,23 +15,27 @@
                 <div class="mb-3">
                     <label for="correoIngreso" class="form-label">Correo Electronico:</label>
                     <input type="email" class="form-control" id="correoIngreso">
+                    <small class="error" id="errorCorreoIngreso"></small>
                 </div>
                 <div class="mb-3">
                     <label for="contrasenaIngreso" class="form-label">Contraseña:</label>
                     <input type="password" class="form-control" id="contrasenaIngreso">
+                    <small class="error" id="errorContrasenaIngreso"></small>
                 </div>
                 <div class="mb-3 text-center py-1">
                     <button type="button" class="btn btn-dark" id="iniciarSesion">Iniciar Sesión</button>
                 </div>
                 <div class="mb3 text-center">
-                    <p><a href="registro.html">¿No tienes cuenta? Crea una aquí</a></p>
+                    <p><a href="registro.html" class="enlaces">¿No tienes cuenta? Crea una aquí</a></p>
                 </div>
                 <div class="mb3 text-center">
-                    <p><a href="index.html">Regresar a página principal</a></p>
+                    <p><a href="index.html" class="enlaces">Regresar a página principal</a></p>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <script src="js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
