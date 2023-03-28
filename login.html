@@ -12,19 +12,21 @@
     <div class="container-fluid">
         <div class="row justify-content-center align-items-center fondo">
             <div class="col-10 col-md-4 cuadro p-4">
-                <div class="mb-3">
-                    <label for="correoIngreso" class="form-label">Correo Electronico:</label>
-                    <input type="email" class="form-control" id="correoIngreso">
-                    <small class="error" id="errorCorreoIngreso"></small>
-                </div>
-                <div class="mb-3">
-                    <label for="contrasenaIngreso" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" id="contrasenaIngreso">
-                    <small class="error" id="errorContrasenaIngreso"></small>
-                </div>
-                <div class="mb-3 text-center py-1">
-                    <button type="button" class="btn btn-dark" id="iniciarSesion">Iniciar Sesión</button>
-                </div>
+                <form action="backend/login.php" method="post">
+                    <div class="mb-3">
+                        <label for="correoIngreso" class="form-label">Correo Electronico:</label>
+                        <input type="email" class="form-control" id="correoIngreso" name="correoIngreso">
+                        <small class="error" id="errorCorreoIngreso"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contrasenaIngreso" class="form-label">Contraseña:</label>
+                        <input type="password" class="form-control" id="contrasenaIngreso" name="contrasenaIngreso">
+                        <small class="error" id="errorContrasenaIngreso"></small>
+                    </div>
+                    <div class="mb-3 text-center py-1">
+                        <button type="submit" class="btn btn-dark" id="iniciarSesion" name="iniciarSesion">Iniciar Sesión</button>
+                    </div>
+                </form>
                 <div class="mb3 text-center">
                     <p><a href="registro.html" class="enlaces">¿No tienes cuenta? Crea una aquí</a></p>
                 </div>

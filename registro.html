@@ -12,113 +12,116 @@
     <div class="container-fluid fondo">
         <div class="row justify-content-center align-items-center py-3">
             <div class="col-10 col-md-4 cuadro p-4">
-                <div class="mb-3">
-                    <label for="nombreRegistro" class="form-label">Nombre(s):</label>
-                    <input type="text" class="form-control" id="nombreRegistro">
-                    <small class="error" id="errorNombre"></small>
-                </div>
-                <div class="mb-3">
-                    <div class="row">
-                        <div class="col">
-                            <label for="apellidoPRegistro" class="form-label">Apellido Paterno:</label>
-                            <input type="text" class="form-control" id="apellidoPRegistro">
-                            <small class="error" id="errorApellidoP"></small>
-                        </div>
-                        <div class="col">
-                            <label for="apellidoMRegistro" class="form-label">Apellido Materno:</label>
-                            <input type="text" class="form-control" id="apellidoMRegistro">
-                            <small class="error" id="errorApellidoM"></small>
+                <form action="backend/crearCuenta.php" method="post">
+                    <div class="mb-3">
+                        <label for="nombreRegistro" class="form-label">Nombre(s):</label>
+                        <input type="text" class="form-control" id="nombreRegistro" name="nombreRegistro">
+                        <small class="error" id="errorNombre"></small>
+                    </div>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col">
+                                <label for="apellidoPRegistro" class="form-label">Apellido Paterno:</label>
+                                <input type="text" class="form-control" id="apellidoPRegistro" name="apellidoPRegistro">
+                                <small class="error" id="errorApellidoP"></small>
+                            </div>
+                            <div class="col">
+                                <label for="apellidoMRegistro" class="form-label">Apellido Materno:</label>
+                                <input type="text" class="form-control" id="apellidoMRegistro" name="apellidoMRegistro">
+                                <small class="error" id="errorApellidoM"></small>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <div class="row">
-                        <div class="col">
-                            <label for="dia" class="form-label">Día</label>
-                            <select class="form-select" name="dia" id="dia">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                                <option value="21">21</option>
-                                <option value="22">22</option>
-                                <option value="23">23</option>
-                                <option value="24">24</option>
-                                <option value="25">25</option>
-                                <option value="26">26</option>
-                                <option value="27">27</option>
-                                <option value="28">28</option>
-                                <option value="29">29</option>
-                                <option value="30">30</option>
-                                <option value="31">31</option>
-                            </select>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col">
+                                <label for="dia" class="form-label">Día</label>
+                                <select class="form-select" name="dia" id="dia">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="mes" class="form-label">Mes</label>
+                                <select class="form-select" name="mes" id="mes">
+                                    <option value="1">Enero</option>
+                                    <option value="2">Febrero</option>
+                                    <option value="3">Marzo</option>
+                                    <option value="4">Abril</option>
+                                    <option value="5">Mayo</option>
+                                    <option value="6">Junio</option>
+                                    <option value="7">Julio</option>
+                                    <option value="8">Agosto</option>
+                                    <option value="9">Septiembre</option>
+                                    <option value="10">Octubre</option>
+                                    <option value="11">Noviembre</option>
+                                    <option value="12">Diciembre</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label for="anho" class="form-label">Año</label>
+                                <select class="form-select" name="anho" id="anho">
+                                </select>
+                            </div>
                         </div>
-                        <div class="col">
-                            <label for="mes" class="form-label">Mes</label>
-                            <select class="form-select" name="mes" id="mes">
-                                <option value="1">Enero</option>
-                                <option value="2">Febrero</option>
-                                <option value="3">Marzo</option>
-                                <option value="4">Abril</option>
-                                <option value="5">Mayo</option>
-                                <option value="6">Junio</option>
-                                <option value="7">Julio</option>
-                                <option value="8">Agosto</option>
-                                <option value="9">Septiembre</option>
-                                <option value="10">Octubre</option>
-                                <option value="11">Noviembre</option>
-                                <option value="12">Diciembre</option>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <label for="anho" class="form-label">Año</label>
-                            <select class="form-select" name="anho" id="anho">
-                            </select>
-                        </div>
+                        <small class="error" id="errorFecha"></small>
                     </div>
-                    <small class="error" id="errorFecha"></small>
-                </div>
-                <div class="mb-3">
-                    <label for="sexo" class="form-label">Sexo</label>
-                    <select class="form-select" name="sexo" id="sexo">
-                        <option value="hombre">Hombre</option>
-                        <option value="mujer">Mujer</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="correoRegistro" class="form-label">Correo Electronico:</label>
-                    <input type="email" class="form-control" id="correoRegistro">
-                    <small class="error" id="errorCorreo"></small>
-                </div>
-                <div class="mb-3">
-                    <label for="contrasenaRegistro" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" id="contrasenaRegistro">
-                    <small class="error" id="errorContrasena"></small>
-                </div>
-                <div class="mb-3">
-                    <label for="confirmarContrasena" class="form-label">Confirmar Contraseña:</label>
-                    <input type="password" class="form-control" id="confirmarContrasena">
-                    <small class="error" id="errorCContrasena"></small>
-                </div>
-                <div class="mb-3 text-center py-1">
-                    <button type="button" class="btn btn-dark" id="registrarse">Registrarse</button>
-                </div>
+                    <div class="mb-3">
+                        <label for="sexo" class="form-label">Sexo</label>
+                        <select class="form-select" name="sexo" id="sexo">
+                            <option value="Hombre">Hombre</option>
+                            <option value="Mujer">Mujer</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correoRegistro" class="form-label">Correo Electronico:</label>
+                        <input type="email" class="form-control" id="correoRegistro" name="correoRegistro">
+                        <small class="error" id="errorCorreo"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contrasenaRegistro" class="form-label">Contraseña:</label>
+                        <input type="password" class="form-control" id="contrasenaRegistro" name="contrasenaRegistro">
+                        <small class="error" id="errorContrasena"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmarContrasena" class="form-label">Confirmar Contraseña:</label>
+                        <input type="password" class="form-control" id="confirmarContrasena" name="confirmarContrasena">
+                        <small class="error" id="errorCContrasena"></small>
+                    </div>
+                    <div class="mb-3 text-center py-1">
+                        <button type="submit" class="btn btn-dark" id="registrarse" name="registrarse">Registrarse</button>
+                        <small class="error" id="errorRegistro" name="errorRegistro"></small>
+                    </div>
+                </form>
                 <div class="mb3 text-center">
                     <p><a href="login.html" class="enlaces">¿Ya tienes cuenta? Inicia sesión aquí</a></p>
                 </div>

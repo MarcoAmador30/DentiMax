@@ -15,6 +15,13 @@ $(document).ready(function(){
 
     $("#registrarse").click(function(){
         let error = false;
+        let nombre = $("#nombreRegistro").val();
+        let apellidoP = $("#apellidoPRegistro").val();
+        let apellidoM = $("#apellidoMRegistro").val();
+        let fecha = $("#dia").val() + $("#mes").val() + $("#anho").val();
+        let sexo = $("#sexo").val();
+        let correo = $("#correoRegistro").val();
+        let contrasena = $("#contrasenaRegistro").val();
         if($("#nombreRegistro").val() == ''){
             $("#errorNombre").html('Favor de ingresar su nombre');
             error = true;
@@ -98,6 +105,9 @@ $(document).ready(function(){
                 $("#errorCContrasena").html('Las contraseñas deben de coincidir');
                 error = true;
             }
+        }
+        if(error == false){
+            window.location.assign("/dentimax/backend/crearCuenta.php/?nombre=" + nombre + "&apellidoP=" + apellidoP + "&apellidoM=" + apellidoM + "&fecha=" + fecha + "&sexo=" + sexo + "&correo=" + correo + "&contrasena=" + contrasena);
         }
     });
 });
