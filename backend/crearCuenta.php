@@ -1,30 +1,35 @@
 <?php
     include_once __DIR__.'/database.php';
 
-    if(isset($_POST['registrarse'])){
+    $cuenta = file_get_contents('php://input');
+    $data = array(
+        'status' => 'error',
+        'message' => 'Ya existe una cuenta con ese nombre'
+    );
+    if(!empty($cuenta)){
+        $jsonOBJ = json_decode($cuenta);
         $correo = $_POST['correoRegistro'];
-        $query1 = "SELECT * FROM usuario WHERE correo = '$correo'";
-        $verificarCorreo = $conexion->query($query1);
-        if($verificarCorreo->num_rows == 1){
-            header("Location: /dentimax/registro.html");
-        }
-        else{
-            $nombre = $_POST['nombreRegistro'];
-            $apellidoP = $_POST['apellidoPRegistro'];
-            $apellidoM = $_POST['apellidoMRegistro'];
-            $dia = $_POST['dia'];
-            $mes = $_POST['mes'];
-            $anho = $_POST['anho'];
-            $sexo = $_POST['sexo'];
-            $contrasena = $_POST['contrasenaRegistro'];
+        $nombre = $_POST['nombreRegistro'];
+        $apellidoP = $_POST['apellidoPRegistro'];
+        $apellidoM = $_POST['apellidoMRegistro'];
+        $fecha = $_POST['fecha'];
+        $sexo = $_POST['sexo'];
+        $contrasena = $_POST['contrasenaRegistro'];
 
-            $query2 = "INSERT INTO cuenta VALUES(null, '{$nombre}', '{$apellidoP}', '{$apellidoM}', '{$dia}'-'{$mes}'-'{$anho}', '{$sexo}', 0)";
-            $crearCuenta = $conexion->query($query2);
-            $ultimoID = mysqli_insert_id($conexion);
+        $query1 = "INSERT INTO cuenta VALUES(null, '{$nombre}', '{$apellidoP}', '{$apellidoM}', '{$fecha}', '{$sexo}', 0)";
+        $crearCuenta = $conexion->query($query1);
+        $ultimoID = mysqli_insert_id($conexion);
 
-            $query3 = "INSERT INTO usuario VALUES(null, '{$correo}', '{$contrasena}', 0, '{$ultimoID}', 0)";
-            $crearUsuario = $conexion->query($query3);
-            header("Location: /dentimax/panelUsuario.html");
+        $query2 = "INSERT INTO usuario VALUES(null, '{$correo}', '{$contrasena}', 0, '{$ultimoID}', 0)";
+        //$crearUsuario = $conexion->query($query2);
+        if($conexion->query($query2)){
+            $data['status'] = "success";
+            $data['message'] = "Usuario agregado";
+        } else {
+            $data['message'] = "ERROR: No se ejecuto $query2. "; //mysqli_error($conexion);
         }
     }
+
+    $conexion->close();
+    echo json_encode($data, JSON_PRETTY_PRINT);
 ?>

@@ -10,15 +10,125 @@ function cargarAños(){
     }
     $("#anho").html(template);
 }
+
+function validarFormulario(){
+    let error = false;
+
+    if($("#nombreRegistro").val() == ''){
+        error = true;
+    }
+    if($("#apellidoPRegistro").val() == ''){
+        error = true;
+    }
+    if($("#apellidoMRegistro").val() == ''){
+        error = true;
+    }
+    if($("#correoRegistro").val() == ''){
+        error = true;
+    }
+    if($("#contrasenaRegistro").val() == ''){
+        error = true;
+    }
+    if($("#confirmarContrasena").val() == ''){
+        error = true;
+    }
+    if($("#contrasenaRegistro").val() != '' && $("#confirmarContrasena").val() != ''){
+        if($("#contrasenaRegistro").val() != $("#confirmarContrasena").val()){
+            error = true;
+        }
+    }
+
+    if(error == true){
+        $('#registrarse').attr('disabled', true);
+    }
+    else{
+        $('#registrarse').attr('disabled', false);
+    }
+}
+
 $(document).ready(function(){
     cargarAños();
+
+    $("#nombreRegistro").blur(function(){
+        if($("#nombreRegistro").val() == ''){
+            $("#errorNombre").html('Favor de ingresar su nombre');
+            validarFormulario();
+        }
+        else{
+            $("#errorNombre").html('');
+            validarFormulario();
+        }
+    });
+
+    $("#apellidoPRegistro").blur(function(){
+        if($("#apellidoPRegistro").val() == ''){
+            $("#errorApellidoP").html('Favor de ingresar su apellido paterno');
+            validarFormulario();
+        }
+        else{
+            $("#errorApellidoP").html('');
+            validarFormulario();
+        }
+    });
+
+    $("#apellidoMRegistro").blur(function(){
+        if($("#apellidoMRegistro").val() == ''){
+            $("#errorApellidoM").html('Favor de ingresar su apellido materno');
+            validarFormulario();
+        }
+        else{
+            $("#errorApellidoM").html('');
+            validarFormulario();
+        }
+    });
+
+    $("#correoRegistro").blur(function(){
+        if($("#correoRegistro").val() == ''){
+            $("#errorCorreo").html('Favor de ingresar su correo electronico');
+            validarFormulario();
+        }
+        else{
+            $("#errorCorreo").html('');
+            validarFormulario();
+        }
+    });
+
+    $("#contrasenaRegistro").blur(function(){
+        if($("#contrasenaRegistro").val() == ''){
+            $("#errorContrasena").html('Favor de ingresar una contraseña');
+            validarFormulario();
+        }
+        else if($("#confirmarContrasena").val() != '' && $("#contrasenaRegistro").val() != $("#confirmarContrasena").val()){
+            $("#errorContrasena").html('Las contraseñas deben de coincidir');
+            validarFormulario();
+        }
+        else{
+            $("#errorContrasena").html('');
+            validarFormulario();
+        }
+    });
+
+    $("#confirmarContrasena").blur(function(){
+        if($("#confirmarContrasena").val() == ''){
+            $("#errorCContrasena").html('Favor de ingresar una contraseña');
+            validarFormulario();
+        }
+        else if($("#contrasenaRegistro").val() != '' && $("#confirmarContrasena").val() != $("#contrasenaRegistro").val()){
+            $("#errorCContrasena").html('Las contraseñas deben de coincidir');
+            validarFormulario();
+        }
+        else{
+            $("#errorCContrasena").html('');
+            validarFormulario();
+        }
+    });
 
     $("#registrarse").click(function(){
         let error = false;
         let nombre = $("#nombreRegistro").val();
         let apellidoP = $("#apellidoPRegistro").val();
         let apellidoM = $("#apellidoMRegistro").val();
-        let fecha = $("#dia").val() + $("#mes").val() + $("#anho").val();
+        let fecha = $("#dia").val() + "-" + $("#mes").val() + "-" + $("#anho").val();
         let sexo = $("#sexo").val();
         let correo = $("#correoRegistro").val();
         let contrasena = $("#contrasenaRegistro").val();
@@ -107,7 +217,31 @@ $(document).ready(function(){
             }
         }
         if(error == false){
-            window.location.assign("/dentimax/backend/crearCuenta.php/?nombre=" + nombre + "&apellidoP=" + apellidoP + "&apellidoM=" + apellidoM + "&fecha=" + fecha + "&sexo=" + sexo + "&correo=" + correo + "&contrasena=" + contrasena);
+            const postData = {
+                nombreRegistro: nombre,
+                apellidoPRegistro: apellidoP,
+                apellidoMRegistro: apellidoM,
+                fecha: fecha,
+                sexo: sexo,
+                correoRegistro: correo,
+                contrasenaRegistro: contrasena
+            };
+            $.ajax({
+                url: 'backend/listarCuentas.php',
+                type: 'GET',
+                data: { correoRegistro: correo },
+                success: function(response){
+                    const cuentas = JSON.parse(response);
+                    if(Object.keys(cuentas).length > 0){
+                        $("#errorRegistro").html('Correo ya registrado');
+                    }
+                    else{
+                        $.post('backend/crearCuenta.php', postData, function (response){
+                            window.location.replace("/dentimax/panelUsuario.html");
+                        });
+                    }
+                }
+            });
         }
     });
 });
