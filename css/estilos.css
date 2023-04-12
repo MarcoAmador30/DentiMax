@@ -65,6 +65,9 @@
 .textoBlanco{
     color: white;
 }
+.textoCentro{
+    text-align: center;
+}
 .enlaces{
     text-decoration: none;
 }

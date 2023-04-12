@@ -55,7 +55,7 @@
                         <div class="w-100 d-block d-sm-block d-md-none py-3"></div>
                         <li class="elementoSubMenu"><a class="textoNegro" href="#">Pacientes</a></li>
                         <div class="w-100 d-block d-sm-block d-md-none py-3"></div>
-                        <li class="elementoSubMenu"><a class="textoNegro" href="panelDentistaServicios.html">Servicios</a></li>
+                        <li class="elementoSubMenu"><a class="textoNegro" href="#">Servicios</a></li>
                     </ul>
                 </div>
             </div>
@@ -63,32 +63,59 @@
     </div>
     <div class="container">
         <div class="row justify-content-center align-items-center py-3">
-            <div class="col-12 col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">PROXIMA CITA</h5>
-                        <p class="card-text">Nombre del tratamiento - 08/03/2023 - 05:00 PM</p>
-                        <a class="card-link" id="paciente">Nombre del paciente</a>
-                        <button type="button" class="btn btn-dark" style="margin-left: 10px;">Modificar Cita</button>
-                    </div>
+            <div class="col-10 col-md-4">
+                <div class="mb-3">
+                    <label for="correoIngreso" class="form-label">Nombre del estudio:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre">
+                    <small class="error" id="errorNombre"></small>
+                </div>
+                <div class="mb-3">
+                    <label for="correoIngreso" class="form-label">Descripción del estudio:</label>
+                    <textarea class="form-control" id="descripcion" name="descripcion" rows="5"></textarea>
+                    <small class="error" id="errorDescripcion"></small>
+                </div>
+                <div class="mb-3">
+                    <label for="tipo" class="form-label">Tipo de estudio:</label>
+                    <select class="form-select" name="tipo" id="tipo">
+                        <option value="Division">Division</option>
+                        <option value="Restauraciones Dentales">Restauraciones Dentales</option>
+                        <option value="Protesis Dentales">Protesis Dentales</option>
+                        <option value="Cirugias Dentales">Cirugias Dentales</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="precio" class="form-label">Precio:</label>
+                    <input type="number" class="form-control" id="precio" name="precio" value="0">
+                    <small class="error" id="errorPrecio"></small>
+                </div>
+                <div class="mb-3 textoCentro">
+                    <button class="btn btn-dark" id="crear" name="crear" disabled>Crear/Modificar</button>
+                    <div class="w-100 d-block d-sm-block d-md-block d-xl-none py-1"></div>
+                    <button class="btn btn-primary" id="cancelarModificar" name="cancelarModificar" disabled>Cancelar Modificación</button>
+                    <div class="w-100 py-1"></div>
+                    <small class="error" id="errorCrear" name="errorCrear"></small>
                 </div>
             </div>
-            <div class="w-100 d-block d-sm-block d-md-none py-3"></div>
-            <div class="col-12 col-md-8">
-                <div class="card">
-                    <div class="card-header">
-                      ULTIMAS CITAS
-                    </div>
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Nombre del tratamiento - 07/03/2023 - Nombre del paciente - $Precio</li>
-                      <li class="list-group-item">Nombre del tratamiento - 07/03/2023 - Nombre del paciente - $Precio</li>
-                      <li class="list-group-item">Nombre del tratamiento - 07/03/2023 - Nombre del paciente - $Precio</li>
-                    </ul>
-                  </div>
+        </div>
+        <div class="row justify-content-center align-items-center py-3">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="servicios"></tbody>
+                </table>
             </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <script src="js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="js/servicios.js"></script>
 </body>
 </html>

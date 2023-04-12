@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary menu">
         <div class="container py-3">
-            <a class="navbar-brand" href="#">LOGO</a>
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" width="70px" height="43.344px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -43,12 +43,19 @@
         </div>
     </nav>
     <div class="container">
-        <div class="row justify-content-center align-items-center py-3 sombra">
+        <div class="row py-3 sombra">
+            <div class="col">
+                <h2>Saludos, Nombre</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-start align-items-center py-3 sombra">
             <div class="col-12 col-lg-4">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-4">
-                            <img class="img-fluid" src="img/perfil_hombre.jpg" alt="foto de perfil hombre">
+                            <img src="img/perfil_hombre.jpg" alt="foto de perfil hombre" width="110px" height="110px">
                         </div>
                         <div class="col-8">
                             <h6 class="display-6">NOMBRE DEL PACIENTE</h6>
@@ -57,18 +64,99 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-6 px-1">
-                <h6 class="display-6">CITAS COMPLETADAS</h6>
-                <p>Nombre del estudio - precio - 10/02/2023</p>
+        </div>
+        <div class="row py-3 sombra">
+            <div class="col-12 col-xl-4">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="display-6">PROXIMA CITA</h2>
+                    </div>
+                    <div class="col-8">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d524.281381437386!2d-99.24209481131658!3d19.665313088878694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d21f9801f367bb%3A0x5497d1b7b0bd6096!2sAgua%20Vida!5e0!3m2!1ses!2smx!4v1680895394410!5m2!1ses!2smx" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="col-2">
+                        <img src="img/calendario.png" alt="calendario" width="25px" height="25px"> <small id="fecha">07/04/2023</small>
+                        <img src="img/dentista.png" alt="calendario" width="25px" height="25px"> <small id="dentista">Luis de la Cruz</small>
+                        <div class="w-100 py-1">
+                            <button class="btn btn-dark">Cambiar</button>
+                        </div>
+                        <div class="w-100 py-1">
+                            <button class="btn btn-danger">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100 d-block d-sm-block d-md-none sombra py-3"></div>
+            <div class="col-12 col-xl-8">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="display-6">PROXIMAS CITAS</h2>
+                    </div>
+                    <div class="card">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="row align-items-center">
+                                    <div class="col-8">
+                                        <p>Nombre del estudio - 07/04/2023 - 12:00 - $100</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-dark">Cambiar</button>
+                                        <div class="w-100 d-block d-sm-block d-md-none py-1"></div>
+                                        <button class="btn btn-danger">Cancelar</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row align-items-center">
+                                    <div class="col-8">
+                                        <p>Nombre del estudio - 07/04/2023 - 12:00 - $100</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-dark">Cambiar</button>
+                                        <div class="w-100 d-block d-sm-block d-md-none py-1"></div>
+                                        <button class="btn btn-danger">Cancelar</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row align-items-center">
+                                    <div class="col-8">
+                                        <p>Nombre del estudio - 07/04/2023 - 12:00 - $100</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-dark">Cambiar</button>
+                                        <div class="w-100 d-block d-sm-block d-md-none py-1"></div>
+                                        <button class="btn btn-danger">Cancelar</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row align-items-center">
+                                    <div class="col-8">
+                                        <p>Nombre del estudio - 07/04/2023 - 12:00 - $100</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-dark">Cambiar</button>
+                                        <div class="w-100 d-block d-sm-block d-md-none py-1"></div>
+                                        <button class="btn btn-danger">Cancelar</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row py-3">
-            <div class="col-12">
-                <h2 class="display-4">PROXIMA CITA</h2>
-            </div>
             <div class="col">
-                <h3>20/02/2023 - Nombre del estudio - $Precio</h3>
-                <p>descripción del procedimiento que se va a realizar</p>
+                <h2 class="display-6">CITAS PREVIAS</h2>
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Nombre del estudio - 07/04/2023 - 12:00 - $100</li>
+                      <li class="list-group-item">Nombre del estudio - 07/04/2023 - 12:00 - $100</li>
+                      <li class="list-group-item">Nombre del estudio - 07/04/2023 - 12:00 - $100</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
