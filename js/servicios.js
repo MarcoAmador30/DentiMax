@@ -114,7 +114,7 @@ $(document).ready(function(){
                         const servicios = JSON.parse(response);
                         if(Object.keys(servicios).length > 0){
                             error = true;
-                            console.log(error);
+                            console.log(servicios);
                             $("#errorCrear").html('Ya existe un servicio con ese nombre');
                         }
                         else{

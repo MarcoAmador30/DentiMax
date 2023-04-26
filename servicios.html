@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary menu">
         <div class="container py-3">
-            <a class="navbar-brand" href="#">LOGO</a>
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" width="70px" height="43.344px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -44,59 +44,27 @@
     </nav>
     <div>
         <div class="container">
-            <div class="row justify-content-center align-items-center servicio py-5">
-                <div class="col-12 col-md-8">
-                    <h2 class="display-6">NOMBRE DEL TRATAMIENTO</h2>
-                    <p>Esta es una descripción del funcionamiento del tratamiento en cuestión</p>
-                </div>
-                <div class="col-12 col-md-4 align-items-center text-center">
-                    <h6 class="precio">$PRECIO</h6>
-                    <button class="btn btn-dark">SOLICITAR</button>
+            <div class="row justify-content-center align-items-center py-3">
+                <div class="col-10 col-md-4">
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control-lg" id="buscar" name="buscar" placeholder="Buscar servicio por nombre o categoria">
+                    </div>
                 </div>
             </div>
-            <div class="row justify-content-center align-items-center servicio py-5">
-                <div class="col-12 col-md-8">
-                    <h2 class="display-6">NOMBRE DEL TRATAMIENTO</h2>
-                    <p>Esta es una descripción del funcionamiento del tratamiento en cuestión</p>
-                </div>
-                <div class="col-12 col-md-4 align-items-center text-center">
-                    <h6 class="precio">$PRECIO</h6>
-                    <button class="btn btn-dark">SOLICITAR</button>
-                </div>
-            </div>
-            <div class="row justify-content-center align-items-center servicio py-5">
-                <div class="col-12 col-md-8">
-                    <h2 class="display-6">NOMBRE DEL TRATAMIENTO</h2>
-                    <p>Esta es una descripción del funcionamiento del tratamiento en cuestión</p>
-                </div>
-                <div class="col-12 col-md-4 align-items-center text-center">
-                    <h6 class="precio">$PRECIO</h6>
-                    <button class="btn btn-dark">SOLICITAR</button>
-                </div>
-            </div>
-            <div class="row justify-content-center align-items-center servicio py-5">
-                <div class="col-12 col-md-8">
-                    <h2 class="display-6">NOMBRE DEL TRATAMIENTO</h2>
-                    <p>Esta es una descripción del funcionamiento del tratamiento en cuestión</p>
-                </div>
-                <div class="col-12 col-md-4 align-items-center text-center">
-                    <h6 class="precio">$PRECIO</h6>
-                    <button class="btn btn-dark">SOLICITAR</button>
-                </div>
-            </div>
-            <div class="row justify-content-center align-items-center servicio py-5">
-                <div class="col-12 col-md-8">
-                    <h2 class="display-6">NOMBRE DEL TRATAMIENTO</h2>
-                    <p>Esta es una descripción del funcionamiento del tratamiento en cuestión</p>
-                </div>
-                <div class="col-12 col-md-4 align-items-center text-center">
-                    <h6 class="precio">$PRECIO</h6>
-                    <button class="btn btn-dark">SOLICITAR</button>
-                </div>
+            <div id="total">
+                <h2 class="display-6 py-3 textoCentro">DIVISIÓN</h2>
+                <div id="division"></div>
+                <h2 class="display-6 py-3 textoCentro">RESTAURACIONES DENTALES</h2>
+                <div id="restauraciones"></div>
+                <h2 class="display-6 py-3 textoCentro">PROTESIS DENTALES</h2>
+                <div id="protesis"></div>
+                <h2 class="display-6 py-3 textoCentro">CIRUGIAS DENTALES</h2>
+                <div id="cirugias"></div>
             </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <script src="js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="js/servicio.js"></script>
 </body>
 </html>

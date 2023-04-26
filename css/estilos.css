@@ -54,7 +54,7 @@
 }
 .precio{
     font-size: 25px;
-    text-decoration: underline;
+    color: green;
 }
 .sombra{
     box-shadow: 0px 0.3px rgb(88, 88, 88);
@@ -73,4 +73,11 @@
 }
 .error{
     color: red;
+}
+.titulo{
+    font-size: 30px;
+    font-weight: bold;
+}
+.descripcion{
+    font-size: 20px;
 }
