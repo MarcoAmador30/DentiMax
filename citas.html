@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>DentiMax</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary menu">
+        <div class="container py-3">
+            <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" width="70px" height="43.344px"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item elementoMenu">
+                        <a href="index.html" aria-current="page">Inicio</a>
+                    </li>
+                    <li class="nav-item elementoMenu">
+                        <a href="servicios.html" aria-current="page">Servicios</a>
+                    </li>
+                    <li class="nav-item elementoMenu">
+                        <a href="#" aria-current="page">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item elementoMenu">
+                        <a href="#" aria-current="page">Contacto</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="img/perfil.png" alt="foto perfil" width="30px" height="30px">
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="login.html">Iniciar Sesión</a></li>
+                          <li><a class="dropdown-item" href="registro.html">Registrarse</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <div class="container">
+            <div class="row justify-content-center align-items-center py-3">
+                <div class="col-5">
+                    <h2 class="display-2">AGENDAR CITA</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 sombraDerecha">
+                    <div class="row">
+                        <div class="col" id="tablaCalendario">
+                            <table id="calendario" cellspacing="5" cellpadding="13" class="redondo bordeTabla">
+                                <tbody>
+                                    <td colspan="7" class="bordeTabla primeraFila">ABRIL 2023</td>
+                                    <tr class="bordeTabla segundaFila">
+                                        <th scope="col" class="bordeTabla">Lun</th>
+                                        <th scope="col" class="bordeTabla">Mar</th>
+                                        <th scope="col" class="bordeTabla">Mie</th>
+                                        <th scope="col" class="bordeTabla">Jue</th>
+                                        <th scope="col" class="bordeTabla">Vie</th>
+                                        <th scope="col" class="bordeTabla">Sab</th>
+                                        <th scope="col" class="bordeTabla">Dom</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="bordeTabla casillaLlena">1</td>
+                                        <td class="bordeTabla casillaLlena">2</td>
+                                        <td class="bordeTabla casillaLlena">3</td>
+                                        <td class="bordeTabla casillaLlena">4</td>
+                                        <td class="bordeTabla casillaLlena">5</td>
+                                        <td class="bordeTabla casillaDisponible">6</td>
+                                        <td class="bordeTabla casillaNoDisponible">7</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bordeTabla casillaDisponible">8</td>
+                                        <td class="bordeTabla casillaDisponible">9</td>
+                                        <td class="bordeTabla casillaDisponible">10</td>
+                                        <td class="bordeTabla casillaDisponible">11</td>
+                                        <td class="bordeTabla casillaDisponible">12</td>
+                                        <td class="bordeTabla casillaDisponible">13</td>
+                                        <td class="bordeTabla casillaNoDisponible">14</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bordeTabla casillaDisponible">15</td>
+                                        <td class="bordeTabla casillaDisponible">16</td>
+                                        <td class="bordeTabla casillaDisponible">17</td>
+                                        <td class="bordeTabla casillaDisponible">18</td>
+                                        <td class="bordeTabla casillaDisponible">19</td>
+                                        <td class="bordeTabla casillaDisponible">20</td>
+                                        <td class="bordeTabla casillaNoDisponible">21</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bordeTabla casillaDisponible">22</td>
+                                        <td class="bordeTabla casillaDisponible">23</td>
+                                        <td class="bordeTabla casillaDisponible">24</td>
+                                        <td class="bordeTabla casillaDisponible">25</td>
+                                        <td class="bordeTabla casillaDisponible">26</td>
+                                        <td class="bordeTabla casillaDisponible">27</td>
+                                        <td class="bordeTabla casillaNoDisponible">28</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bordeTabla casillaDisponible">29</td>
+                                        <td class="bordeTabla casillaDisponible">30</td>
+                                        <td class="bordeTabla casillaNoDisponible">1</td>
+                                        <td class="bordeTabla casillaNoDisponible">2</td>
+                                        <td class="bordeTabla casillaNoDisponible">3</td>
+                                        <td class="bordeTabla casillaNoDisponible">4</td>
+                                        <td class="bordeTabla casillaNoDisponible">5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p><div class="icono"></div> Días disponibles</p>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <select class="form-select" name="hora" id="hora">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Resumen de cita:</h4>
+                    <p>Ubicación del consultorio dental</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d524.281381437386!2d-99.24209481131658!3d19.665313088878694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d21f9801f367bb%3A0x5497d1b7b0bd6096!2sAgua%20Vida!5e0!3m2!1ses!2smx!4v1680895394410!5m2!1ses!2smx" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <p>20 Av. Reforma Agraria</p>
+                    <p>Día: <small id="day"></small></p>
+                    <p>Contacto</p>
+                    <p>Telefono: +52 5527593332</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="js/citas.js"></script>
+</body>
+</html>

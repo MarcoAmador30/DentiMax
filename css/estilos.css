@@ -59,6 +59,9 @@
 .sombra{
     box-shadow: 0px 0.3px rgb(88, 88, 88);
 }
+.sombraDerecha{
+    box-shadow: 0.3px 0px 0px 0px rgb(88, 88, 88);
+}
 .textoNegro{
     color: black;
 }
@@ -80,4 +83,37 @@
 }
 .descripcion{
     font-size: 20px;
+}
+.redondo{
+    border-radius: 1em;
+    overflow: hidden;
+}
+.bordeTabla{
+    border: black 1px solid;
+    text-align: center;
+}
+.primeraFila{
+    background-color: hsl(227deg 98% 59%);
+    color: white;
+    text-align: center;
+}
+.segundaFila{
+    background-color: hsl(227, 100%, 74%);
+}
+.casillaNoDisponible{
+    background-color: rgb(141, 141, 141);
+}
+.casillaLlena{
+    background-color: rgb(255, 113, 113);
+}
+.casillaDisponible{
+    background-color: white;
+}
+.casillaDisponible:hover{
+    background-color: rgb(207, 207, 207);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.casillaSeleccionada{
+    background-color: rgb(247, 248, 156);
 }
