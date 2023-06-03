@@ -1,3 +1,7 @@
+if('token' in localStorage == true){
+    window.location.replace('/dentimax/index.html');
+}
+
 function cargarAños(){
     let template = ``;
     for(i = 2023; i >= 1905; i--){
@@ -237,7 +241,7 @@ $(document).ready(function(){
                     }
                     else{
                         $.post('backend/crearCuenta.php', postData, function (response){
-                            window.location.replace("/dentimax/panelUsuario.html");
+                            window.location.replace("/dentimax/login.html");
                         });
                     }
                 }

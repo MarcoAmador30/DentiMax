@@ -1,3 +1,7 @@
+if('token' in localStorage == true){
+    window.location.replace('/dentimax/index.html');
+}
+
 function validarFormulario(){
     let error = false;
 
@@ -68,10 +72,13 @@ $(document).ready(function(){
                 success: function(response){
                     const cuentas = JSON.parse(response);
                     if(Object.keys(cuentas).length > 0){
-                        if(cuentas[0]['tipo'] == 0){
+                        let sesion = { 'tipo': cuentas['tipoCuenta'], 'idCuenta': cuentas['idCuenta']};
+                        localStorage.setItem('token', JSON.stringify(sesion));
+                        
+                        if(cuentas['tipoCuenta'] == 0){
                             window.location.replace('/dentimax/panelUsuario.html');
                         }
-                        else if(cuentas[0]['tipo'] == 1){
+                        else if(cuentas['tipoCuenta'] == 1){
                             window.location.replace('/dentimax/panelDentista.html');
                         }
                     }

@@ -96,7 +96,7 @@ function generarCalendario(){
 }
 
 function formatearCalendario(){
-    for(i = 0; i <= dia - 1; i++){
+    for(i = 0; i <= dia; i++){
         let day = "#" + i.toString();
         $(day).attr('class', 'bordeTabla casillaNoDisponible');
     }
@@ -120,6 +120,11 @@ function obtenerFechas(){
 }
 
 $(document).ready(function(){
+    if('token' in localStorage == false){
+        window.location.replace('/dentimax/login.html');
+    }
+    var sesion = JSON.parse(localStorage.getItem('token'));
+
     generarCalendario();
     formatearCalendario();
     const fechas = obtenerFechas();
@@ -132,7 +137,6 @@ $(document).ready(function(){
         }
         diaSeleccionado = $(this)[0].innerHTML;
         $('#' + diaSeleccionado.toString()).attr('class', 'bordeTabla casillaSeleccionada');
-        $("#day").html(diaSeleccionado + ' de ' + mesPalabras + ' del ' + anho);
         let template = '';
         let horas = [];
         let horasDisponibles= ['10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30'];
@@ -224,5 +228,23 @@ $(document).ready(function(){
             `;
         }
         $("#hora").html(template);
+        $("#day").html(diaSeleccionado + ' de ' + mesPalabras + ' del ' + anho + ' <small id="horaSeleccionada">' + $("#hora").children("option:selected").val() + '</small>');
+        $("#crearCita").attr('disabled', false);
+    });
+
+    $("#hora").change(function(){
+        $("#horaSeleccionada").html($("#hora").children("option:selected").val());
+    });
+
+    $("#crearCita").click(function(){
+        let horaCita = $("#hora").children("option:selected").val();
+        $.ajax({
+            url: 'backend/crearCita.php',
+            type: 'POST',
+            data: { idPaciente: sesion.idCuenta, idServicio: sessionStorage.getItem('cita'), mes: mes, dia: diaSeleccionado, hora: horaCita },
+            success: function(response){
+                window.location.replace('/dentimax/panelUsuario.html');
+            }
+        })
     });
 });

@@ -14,9 +14,10 @@
                     $data1[$num][$key] = $value;
                 }
             }
-            session_start();
-            $_SESSION['autenticado'] = true;
-            $_SESSION['idCuenta'] = $rows[0]['idCuenta'];
+            $data2 = array(
+                'tipoCuenta' => $rows[0]['tipo'],
+                'idCuenta' => $rows[0]['idCuenta']
+            );
         }
     } if($consulta2 = $conexion->query("SELECT * from usuario WHERE correo = '$correo' AND contrasena = '$contrasena' AND tipo = 1 AND eliminado = 0")){
         $rows = $consulta2->fetch_all(MYSQLI_ASSOC);
@@ -27,13 +28,15 @@
                     $data1[$num][$key] = $value;
                 }
             }
-            session_start();
-            $_SESSION['autenticado'] = true;
-            $_SESSION['idCuenta'] = $rows[0]['idCuenta'];
+            $data2 = array(
+                'tipoCuenta' => $rows[0]['tipo'],
+                'idCuenta' => $rows[0]['idCuenta']
+            );
         }
     } else {
         die('Query Error: '.mysqli_error($conexion));
+        $data2 = array();
     }
     $conexion->close();
-    echo json_encode($data1, JSON_PRETTY_PRINT);
+    echo json_encode($data2, JSON_PRETTY_PRINT);
 ?>

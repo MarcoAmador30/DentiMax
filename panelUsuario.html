@@ -35,7 +35,7 @@
                         </a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="panelUsuario.html">Mi panel</a></li>
-                          <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                          <li><a class="dropdown-item" href="#" id="cerrarSesion">Cerrar Sesión</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -45,44 +45,32 @@
     <div class="container">
         <div class="row py-3 sombra">
             <div class="col">
-                <h2>Saludos, Nombre</h2>
+                <h2>Saludos, <small id="nombreCorto"></small></h2>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row justify-content-start align-items-center py-3 sombra">
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-5">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-4">
                             <img src="img/perfil_hombre.jpg" alt="foto de perfil hombre" width="110px" height="110px">
                         </div>
                         <div class="col-8">
-                            <h6 class="display-6">NOMBRE DEL PACIENTE</h6>
-                            <p>30/08/01 - Número años - Sexo</p>
+                            <h6 class="display-6" id="nombreCompleto">NOMBRE DEL PACIENTE</h6>
+                            <p><small id="fechaNacimiento">30/08/01</small> - Número años - <small id="sexo"></small></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row py-3 sombra">
-            <div class="col-12 col-xl-4">
+            <div class="col-12 col-xl-4" id="proximaCita">
                 <div class="row">
-                    <div class="col-12">
-                        <h2 class="display-6">PROXIMA CITA</h2>
-                    </div>
-                    <div class="col-8">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d524.281381437386!2d-99.24209481131658!3d19.665313088878694!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d21f9801f367bb%3A0x5497d1b7b0bd6096!2sAgua%20Vida!5e0!3m2!1ses!2smx!4v1680895394410!5m2!1ses!2smx" width="250" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="col-2">
-                        <img src="img/calendario.png" alt="calendario" width="25px" height="25px"> <small id="fecha">07/04/2023</small>
-                        <img src="img/dentista.png" alt="calendario" width="25px" height="25px"> <small id="dentista">Luis de la Cruz</small>
-                        <div class="w-100 py-1">
-                            <button class="btn btn-dark">Cambiar</button>
-                        </div>
-                        <div class="w-100 py-1">
-                            <button class="btn btn-danger">Cancelar</button>
-                        </div>
+                    <div class="col-12 text-center">
+                        <img src="img/pinguino.png" class="img-fluid" alt="pinguino" width="200px">
+                        <h2>Parece que no tienes ninguna cita agendada</h2>
                     </div>
                 </div>
             </div>
@@ -93,55 +81,11 @@
                         <h2 class="display-6">PROXIMAS CITAS</h2>
                     </div>
                     <div class="card">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <div class="row align-items-center">
-                                    <div class="col-8">
-                                        <p>Nombre del estudio - 07/04/2023 - 12:00 - $100</p>
-                                    </div>
-                                    <div class="col-4">
-                                        <button class="btn btn-dark">Cambiar</button>
-                                        <div class="w-100 d-block d-sm-block d-md-none py-1"></div>
-                                        <button class="btn btn-danger">Cancelar</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="row align-items-center">
-                                    <div class="col-8">
-                                        <p>Nombre del estudio - 07/04/2023 - 12:00 - $100</p>
-                                    </div>
-                                    <div class="col-4">
-                                        <button class="btn btn-dark">Cambiar</button>
-                                        <div class="w-100 d-block d-sm-block d-md-none py-1"></div>
-                                        <button class="btn btn-danger">Cancelar</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="row align-items-center">
-                                    <div class="col-8">
-                                        <p>Nombre del estudio - 07/04/2023 - 12:00 - $100</p>
-                                    </div>
-                                    <div class="col-4">
-                                        <button class="btn btn-dark">Cambiar</button>
-                                        <div class="w-100 d-block d-sm-block d-md-none py-1"></div>
-                                        <button class="btn btn-danger">Cancelar</button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item">
-                                <div class="row align-items-center">
-                                    <div class="col-8">
-                                        <p>Nombre del estudio - 07/04/2023 - 12:00 - $100</p>
-                                    </div>
-                                    <div class="col-4">
-                                        <button class="btn btn-dark">Cambiar</button>
-                                        <div class="w-100 d-block d-sm-block d-md-none py-1"></div>
-                                        <button class="btn btn-danger">Cancelar</button>
-                                    </div>
-                                </div>
-                            </li>
+                        <ul class="list-group list-group-flush" id="proximasCitas">
+                            <div class="text-center">
+                                <img src="img/pinguino.png" class="img-fluid" alt="diente" width="200px">
+                                <h2>No tienes proximas citas</h2>
+                            </div>
                         </ul>
                     </div>
                 </div>
@@ -151,10 +95,11 @@
             <div class="col">
                 <h2 class="display-6">CITAS PREVIAS</h2>
                 <div class="card">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Nombre del estudio - 07/04/2023 - 12:00 - $100</li>
-                      <li class="list-group-item">Nombre del estudio - 07/04/2023 - 12:00 - $100</li>
-                      <li class="list-group-item">Nombre del estudio - 07/04/2023 - 12:00 - $100</li>
+                    <ul class="list-group list-group-flush" id="citasPasadas">
+                        <div class="text-center">
+                            <img src="img/pinguino.png" class="img-fluid" alt="diente" width="200px">
+                            <h2>Por el momento no tienes citas pasadas</h2>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -162,5 +107,6 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <script src="js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="js/panelUsuario.js"></script>
 </body>
 </html>
